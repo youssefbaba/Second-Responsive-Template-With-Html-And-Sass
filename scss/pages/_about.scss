@@ -1,0 +1,173 @@
+//  Start About Me
+// .about 
+.about {
+
+    // .about .about-info
+    #{&}-info {
+        display: grid;
+        grid-template-areas:
+            "image"
+            "bio"
+            "award-1"
+            "award-2 "
+            "award-3";
+        gap: 1rem;
+
+        @include medium {
+            grid-template-areas:
+                "image bio bio"
+                "award-1 award-2 award-3";
+        }
+
+        // .about .about-info .image
+        .image {
+            grid-area: image;
+
+            // .about .about-info .image img 
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        // .about .about-info .bio
+        .bio {
+            grid-area: bio;
+            border-left: 3px solid $yellow-color;
+            padding: 0.8rem;
+        }
+
+        @for $i from 1 through 3 {
+
+            // .about .about-info .award-1 ,.about .about-info .award-2,.about .about-info .award-3
+            .award-#{$i} {
+                grid-area: award-#{$i};
+                padding: 1rem 0;
+
+                // .about .about-info .award-1 i ,.about .about-info .award-2 i,.about .about-info .award-3 i
+                i {
+                    color: $yellow-color;
+                    margin-bottom: 1rem;
+                }
+
+
+            }
+        }
+    }
+}
+
+// End  About Me 
+// Start Skills 
+// .skills
+.skills {
+    .heading-section {
+        margin-bottom: 1rem;
+    }
+
+    // .skills .skills-items
+    #{&}-items {
+
+        // .skills .skills-items li
+        li {
+            margin-bottom: 0.6rem;
+
+            // .skills .skills-items li div 
+            div {
+                height: pxToRem(20px);
+                background-color: $medium-color;
+                border-radius: 5px;
+                overflow: hidden;
+                position: relative;
+
+                // .skills .skills-items li div span 
+                span {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $yellow-color;
+                }
+            }
+        }
+    }
+}
+
+// End Skills 
+// Start Partners 
+// .partners
+.partners {
+    display: none;
+
+    @include small {
+        display: block;
+    }
+
+    // .partners .partners-items
+    #{&}-items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        align-items: center;
+    }
+
+    // .partners .partners-item
+    #{&}-item {
+        width: 70%;
+
+        // .partners .partners-item img 
+        img {
+            display: block;
+        }
+    }
+}
+
+// End Partners 
+// Start Testimonials 
+// .testimonials
+.testimonials {
+
+    // .testimonials  .testimonials-items
+    #{&}-items {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        @include medium {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include large {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    // .testimonials  .testimonials-item
+    #{&}-item {
+
+        // .testimonials  .testimonials-item .text
+        .text {
+            border: 1px solid $medium-color;
+            border-radius: 5px;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        // .testimonials  .testimonials-item .image
+        .image {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            // .testimonials  .testimonials-item .image img 
+            img {
+                width: pxToRem(50px);
+                height: pxToRem(50px);
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+// End Testimonials

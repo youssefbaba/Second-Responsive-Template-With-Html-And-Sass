@@ -1,0 +1,108 @@
+body {
+    font-family: 'Dosis', sans-serif;
+    background-color: $white-color;
+    line-height: 1.6;
+}
+
+a {
+    text-transform: uppercase;
+    color: $dark-color;
+}
+
+.lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+h2,
+h3,
+h4 {
+    text-transform: uppercase;
+}
+
+//  Text Alignement
+.text {
+    &-center {
+        text-align: center;
+    }
+
+    &-left {
+        text-align: left;
+    }
+
+    &-right {
+        text-align: right;
+    }
+}
+
+// Padding Around Element 
+.p {
+    @for $i from 1 through 5 {
+        &-#{$i} {
+            padding: #{$i}rem;
+        }
+    }
+}
+
+// Padding Top/Bottom and left/right 
+.p {
+    @for $i from 1 through 5 {
+        &#{y}-#{$i} {
+            padding: #{$i}rem 0;
+        }
+
+        &#{x}-#{$i} {
+            padding: 0 #{$i}rem;
+        }
+    }
+}
+
+// Margin Around Element 
+.m {
+    @for $i from 1 through 5 {
+        &-#{$i} {
+            margin: #{$i}rem;
+        }
+    }
+}
+
+// Margin Top/Bottom and left/right 
+.m {
+    @for $i from 1 through 5 {
+        &#{y}-#{$i} {
+            margin: #{$i}rem 0;
+        }
+
+        &#{x}-#{$i} {
+            margin: 0 #{$i}rem;
+        }
+    }
+}
+
+// Rounded element 
+.rounded {
+    border-radius: 50%;
+}
+
+// Background-color 
+.bg {
+    &-light {
+        @include setBackgroundColor($light-color)
+    }
+
+    &-medium {
+        @include setBackgroundColor($medium-color)
+    }
+
+    &-dark {
+        @include setBackgroundColor($dark-color)
+    }
+}
+
+// For Map In Contact Page
+#bodyContent p {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--color-dark);
+}

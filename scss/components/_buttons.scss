@@ -1,0 +1,28 @@
+// Start Buttons 
+// .btn
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: $light-color;
+    color: $dark-color;
+    border: none;
+    cursor: pointer;
+    @include transition(all 0.3s ease-in);
+
+    // .btn.btn-dark
+    &.btn-dark {
+        @include setBackgroundColor($dark-color)
+    }
+
+    // .btn.btn-yellow
+    &.btn-yellow {
+        @include setBackgroundColor($yellow-color)
+    }
+
+    // .btn.btn-light
+    &.btn-light {
+        @include setBackgroundColor($light-color)
+    }
+}
+
+// End  Buttons 

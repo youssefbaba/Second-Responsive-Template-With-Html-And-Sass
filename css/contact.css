@@ -1,0 +1,492 @@
+/* Use Library Math */
+/* Import Variables */
+/* Import Colors */
+/* Import Placeholders */
+.contact-details-map .contact-details li i, footer .social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Import Functions */
+/* Import Mixins */
+/* Import  Reset  */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+video {
+  width: 100%;
+  height: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Import Base */
+body {
+  font-family: "Dosis", sans-serif;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-transform: uppercase;
+  color: #333;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+.p-4 {
+  padding: 4rem;
+}
+.p-5 {
+  padding: 5rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+.px-1 {
+  padding: 0 1rem;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.px-2 {
+  padding: 0 2rem;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.px-3 {
+  padding: 0 3rem;
+}
+.py-4 {
+  padding: 4rem 0;
+}
+.px-4 {
+  padding: 0 4rem;
+}
+.py-5 {
+  padding: 5rem 0;
+}
+.px-5 {
+  padding: 0 5rem;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+.m-2 {
+  margin: 2rem;
+}
+.m-3 {
+  margin: 3rem;
+}
+.m-4 {
+  margin: 4rem;
+}
+.m-5 {
+  margin: 5rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+.mx-1 {
+  margin: 0 1rem;
+}
+.my-2 {
+  margin: 2rem 0;
+}
+.mx-2 {
+  margin: 0 2rem;
+}
+.my-3 {
+  margin: 3rem 0;
+}
+.mx-3 {
+  margin: 0 3rem;
+}
+.my-4 {
+  margin: 4rem 0;
+}
+.mx-4 {
+  margin: 0 4rem;
+}
+.my-5 {
+  margin: 5rem 0;
+}
+.mx-5 {
+  margin: 0 5rem;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.bg-light {
+  background-color: #f4f4f4;
+  color: #333;
+}
+.bg-medium {
+  background-color: #ccc;
+  color: #333;
+}
+.bg-dark {
+  background-color: #333;
+  color: #fff;
+}
+
+#bodyContent p {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--color-dark);
+}
+
+/* Import Grid */
+.container {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media (min-width:577px) {
+  .container {
+    width: 540px;
+  }
+}
+@media (min-width:768px) {
+  .container {
+    width: 720px;
+  }
+}
+@media (min-width:992px) {
+  .container {
+    width: 960px;
+  }
+}
+@media (min-width:1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+/* Import Header */
+header {
+  height: 100%;
+}
+@media (min-width:577px) {
+  header {
+    height: auto;
+  }
+}
+header .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width:577px) {
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+  }
+}
+header .container .logo {
+  display: block;
+  height: 4.375rem;
+  width: 4.375rem;
+}
+header .container .navbar-menu {
+  display: flex;
+  align-items: center;
+}
+header .container .navbar-menu li {
+  padding: 1rem 1.5rem;
+}
+header .container .navbar-menu li a {
+  color: #fff;
+  padding: 0.5rem 0;
+  position: relative;
+}
+header .container .navbar-menu li a:not(.active)::before {
+  content: "";
+  position: absolute;
+  background-color: #ccc;
+  height: 3px;
+  width: 0;
+  top: 100%;
+  left: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+header .container .navbar-menu li a:hover::before {
+  width: 100%;
+}
+header .container .navbar-menu li .active {
+  border-bottom: 3px solid #ffbc00;
+}
+
+/* End Header */
+/* Import Forms */
+.form .form-group input[type=text],
+.form .form-group input[type=email],
+.form .form-group input[type=tel],
+.form .form-group textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+.form .form-group textarea {
+  height: 8rem;
+}
+
+/* Import Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+@media (min-width:768px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+footer .social-links {
+  display: flex;
+  gap: 1rem;
+}
+footer .social-links a {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: #333;
+  color: #fff;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+footer .social-links a:hover {
+  background-color: #ffbc00;
+}
+
+/* Import Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #f4f4f4;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.btn.btn-dark {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn-yellow {
+  background-color: #ffbc00;
+  color: #333;
+}
+.btn.btn-light {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Import Header Landing Inner */
+.header-landing-inner {
+  background-image: url("../../images/landing.jpg");
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  background-size: cover;
+  height: 10rem;
+  border-bottom: 3px solid #ffbc00;
+}
+@media (min-width:577px) {
+  .header-landing-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 5.5rem;
+  }
+}
+
+/* Import Heading Section  */
+.heading-section {
+  text-align: center;
+}
+.heading-section h2 {
+  padding-bottom: 1rem;
+  position: relative;
+  font-weight: 400;
+  font-size: 2rem;
+}
+.heading-section h2::before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3px;
+  background-color: #ffbc00;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.heading-section .lead {
+  margin-top: 1rem;
+}
+
+/* Import Contact Page */
+.contact-message .form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+@media (min-width:768px) {
+  .contact-message .form {
+    flex-direction: row;
+  }
+}
+.contact-message .form .name,
+.contact-message .form .subject,
+.contact-message .form .email,
+.contact-message .form .phone {
+  flex-basis: calc((100% - 1.2rem) * 0.5);
+}
+.contact-message .form .message,
+.contact-message .form .submit {
+  flex-basis: 100%;
+}
+.contact-message .form .btn {
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
+}
+.contact-message .form .btn:hover {
+  background-color: #ffbc00;
+  color: #333;
+}
+
+.contact-details-map .heading-section {
+  margin-bottom: 2rem;
+}
+.contact-details-map .contact-details-map-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-self: center;
+  gap: 1.5rem;
+}
+@media (min-width:768px) {
+  .contact-details-map .contact-details-map-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.contact-details-map .contact-details li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.contact-details-map .contact-details li i {
+  width: 50px;
+  height: 50px;
+  background-color: #ffbc00;
+  color: #333;
+  font-size: 20px;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+.contact-details-map .contact-details li a {
+  display: block;
+  text-transform: initial;
+}
+.contact-details-map .contact-details li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.contact-details-map .contact-details li:hover i {
+  background-color: #333;
+  color: #fff;
+}
+.contact-details-map .map {
+  height: 500px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=contact.css.map */

@@ -1,0 +1,80 @@
+// Start Header 
+// header
+header {
+    height: 100%;
+
+    @include small {
+        height: auto;
+    }
+
+    // header .container
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include small {
+            flex-direction: row;
+            justify-content: space-between;
+            height: auto;
+        }
+
+        // header .container .logo
+        .logo {
+            display: block;
+            height: pxToRem(70px);
+            width: pxToRem(70px);
+        }
+
+        // header .container .navbar
+        .navbar {
+            &-menu {
+                display: flex;
+                align-items: center;
+
+                // header .container .navbar li
+                li {
+                    padding: 1rem 1.5rem;
+
+                    // header .container .navbar li a
+                    a {
+                        color: $white-color;
+                        padding: 0.5rem 0;
+                        position: relative;
+
+                        // header .container .navbar li a:not(.active)::before 
+                        &:not(.active)::before {
+                            content: "";
+                            position: absolute;
+                            background-color: $medium-color;
+                            height: 3px;
+                            width: 0;
+                            top: 100%;
+                            left: 0;
+                            @include transition(all 0.3s ease-in);
+                        }
+
+                        // header .container .navbar li a:hover
+                        &:hover {
+
+                            // header .container .navbar li a:hover:before
+                            &::before {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    // header .container .navbar li .active
+                    .active {
+                        border-bottom: 3px solid $yellow-color;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+/* End Header */

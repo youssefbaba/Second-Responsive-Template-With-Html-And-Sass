@@ -1,0 +1,109 @@
+// Start Contact Message   
+.contact-message {
+    .form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+
+        @include medium {
+            flex-direction: row;
+        }
+
+        .name,
+        .subject,
+        .email,
+        .phone {
+            flex-basis: calc((100% - 1.2rem) * 0.5);
+        }
+
+        .message,
+        .submit {
+            flex-basis: 100%;
+        }
+
+        .btn {
+            display: block;
+
+            margin: auto {
+                top: 2rem;
+            }
+
+            &:hover {
+                @include setBackgroundColor($yellow-color)
+            }
+        }
+    }
+}
+
+// End  Contact Message 
+//  Start Contact Details  Map 
+// .contact-details-map
+.contact-details-map {
+
+    // .contact-details-map .heading-section
+    .heading-section {
+        margin-bottom: 2rem;
+    }
+
+    // .contact-details-map  .contact-details-map-content
+    #{&}-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-self: center;
+        gap: 1.5rem;
+
+        @include medium {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    // .contact-details-map .contact-details
+    .contact-details {
+
+        // .contact-details-map .contact-details li 
+        li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            // .contact-details-map .contact-details li  i
+            i {
+                width: 50px;
+                height: 50px;
+                @extend %center;
+                @include setBackgroundColor($yellow-color);
+                font-size: 20px;
+                border-radius: 50%;
+                @include transition(all 0.5s ease-in);
+            }
+
+            // .contact-details-map .contact-details li  a
+            a {
+                display: block;
+                text-transform: initial;
+            }
+
+            // .contact-details-map .contact-details li:not(:last-child)
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            // .contact-details-map .contact-details li:hover
+            &:hover {
+
+                // .contact-details-map .contact-details li:hover i
+                i {
+                    @include setBackgroundColor($dark-color);
+                }
+            }
+        }
+    }
+
+    // .contact-details-map  .map
+    .map {
+        height: 500px;
+        width: 100%;
+    }
+}

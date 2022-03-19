@@ -1,0 +1,91 @@
+// Start Works
+// .works
+.works {
+
+    // .works .works-items
+    #{&}-items {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @include medium {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include large {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    // .works .works-item
+    #{&}-item {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        // .works .works-item img
+        img {
+            display: block;
+            @include transition(all 0.5s)
+        }
+
+        // .works .works-item .hiden
+        .hiden {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            color: $white-color;
+            @include opacity(0);
+            @include transition(all 0.5s ease 0.2s);
+            z-index: 3;
+
+            // .works .works-item .hiden p
+            p {
+                text-transform: uppercase;
+                @include opacity(0.8);
+                font-size: 1.2rem;
+            }
+
+            // .works .works-item .hiden h3
+            h3 {
+                font-size: 2rem;
+            }
+        }
+
+        // .works .works-item::before
+        &::before {
+            content: "";
+            @include overlay;
+            background-color: rgba($yellow-color, 0.9);
+            transform: translate(-200%, -200%) scale(2) rotate(45deg);
+            visibility: hidden;
+            @include transition(all 1s);
+            z-index: 2;
+        }
+
+        // .works .works-item:hover
+        &:hover {
+
+            // .works .works-item:hover img 
+            img {
+                transform: scale(1.2);
+            }
+
+            // .works .works-item:hover .hiden
+            .hiden {
+                top: 50%;
+                @include opacity(1);
+            }
+
+            // .works .works-item:hover::before
+            &::before {
+                visibility: visible;
+                transform: translate(0, 0) scale(2) rotate(45deg);
+            }
+        }
+    }
+}
+
+// End  Works 

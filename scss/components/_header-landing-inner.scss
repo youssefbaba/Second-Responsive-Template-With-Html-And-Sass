@@ -1,0 +1,22 @@
+// Start  Header Landing  Inner 
+// .header-landing-inner
+.header-landing-inner {
+    background: {
+        image: url("../../images/landing.jpg");
+        repeat: no-repeat;
+        position: 20% 30%;
+        size: cover;
+    }
+
+    height: 10rem;
+    border-bottom: 3px solid $yellow-color;
+
+    @include small {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 5.5rem;
+    }
+}
+
+// End  Header Landing  Inner

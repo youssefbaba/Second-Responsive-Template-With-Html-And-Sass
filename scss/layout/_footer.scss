@@ -1,0 +1,39 @@
+// Start Footer 
+// footer
+footer {
+    @include setBackgroundColor($dark-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    @include medium {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    // footer .social-links
+    .social-links {
+        display: flex;
+        gap: 1rem;
+
+        // footer .social-links a
+        a {
+            @extend %center;
+            width: pxToRem(40px);
+            height: pxToRem(40px);
+            border-radius: 50%;
+            border: 2px solid $white-color;
+            @include setBackgroundColor($dark-color);
+            @include transition(all 0.3s ease-in);
+
+            // footer .social-links a:hover
+            &:hover {
+                background-color: $yellow-color;
+            }
+        }
+    }
+}
+
+// End Footer 

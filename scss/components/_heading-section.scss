@@ -1,0 +1,32 @@
+// Start Heading Section 
+// .heading-section
+.heading-section {
+    text-align: center;
+
+    // .heading-section h2
+    h2 {
+        padding-bottom: 1rem;
+        position: relative;
+        font-weight: 400;
+        font-size: 2rem;
+
+        // .heading-section h2::before
+        &::before {
+            content: "";
+            position: absolute;
+            width: 3rem;
+            height: 3px;
+            background-color: $yellow-color;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    // .heading-section .lead
+    .lead {
+        margin-top: 1rem;
+    }
+}
+
+// End Heading Section

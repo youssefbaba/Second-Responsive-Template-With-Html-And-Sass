@@ -1,0 +1,244 @@
+// Start Header Landing 
+// .header-landing
+.header-landing {
+    position: relative;
+
+    background: {
+        image: url("../../images/landing.jpg");
+        repeat: no-repeat;
+        position: center center;
+        size: cover;
+    }
+
+    height: 10rem;
+    border-bottom: 3px solid $yellow-color;
+
+    @include small {
+        padding-top: $main-padding;
+        padding-bottom: $main-padding;
+        height: 50vh;
+    }
+
+    @include medium {
+        height: 100vh;
+    }
+
+    // .header-landing .landing
+    .landing {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -32%);
+        color: white;
+        text-align: center;
+        display: none;
+
+        @include small {
+            display: block;
+        }
+
+        @include medium {
+            transform: translate(-50%, -50%);
+        }
+
+        // .header-landing .landing-content
+        &-content {
+
+            // .header-landing .landing-content h1
+            h1 {
+                font-size: 4rem;
+                line-height: 1.2;
+            }
+
+            // .header-landing .landing-content .btn
+            .btn {
+
+                // .header-landing .landing-content .btn:hover
+                &:hover {
+                    @include setBackgroundColor($yellow-color);
+                }
+            }
+        }
+
+    }
+}
+
+// Start Header Landing 
+// Start Services 
+// .services
+.services {
+
+    // .services .services-items
+    #{&}-items {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        @include medium {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include large {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    // .services .services-item
+    #{&}-item {
+        i {
+            color: $yellow-color;
+            margin-bottom: 0.4rem;
+        }
+    }
+}
+
+// End Services 
+// Start Statistics 
+// .statistics
+.statistics {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include medium {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include large {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    // .statistics .statistics-item
+    #{&}-item {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        line-height: 2;
+
+        // .statistics .statistics-item:nth-child(odd)
+        &:nth-child(odd) {
+            background-color: $light-color;
+        }
+
+        // .statistics .statistics-item:nth-child(even)
+        &:nth-child(even) {
+            background-color: $medium-color;
+        }
+
+        @include medium {
+
+            // .statistics .statistics-item:nth-child(1) ,.statistics .statistics-item:nth-child(4)
+            &:nth-child(1),
+            &:nth-child(4) {
+                background-color: $light-color;
+            }
+
+            // .statistics .statistics-item:nth-child(2) ,.statistics .statistics-item:nth-child(3)
+            &:nth-child(2),
+            &:nth-child(3) {
+                background-color: $medium-color;
+            }
+        }
+
+        @include large {
+
+            // .statistics .statistics-item:nth-child(odd)
+            &:nth-child(odd) {
+                background-color: $light-color;
+            }
+
+            // .statistics .statistics-item:nth-child(even)
+            &:nth-child(even) {
+                background-color: $medium-color;
+            }
+        }
+
+        // .statistics .statistics-item p
+        p {
+            font-size: 1.5rem;
+        }
+
+        // .statistics .statistics-item h4
+        h4 {
+            font: {
+                size: 2rem;
+                weight: 600;
+            }
+        }
+    }
+}
+
+// End Statistics
+// Start Process 
+// .process
+.process {
+
+    // .process .process-items
+    #{&}-items {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+
+        @include medium {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include large {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    // .process .process-item
+    #{&}-item {
+        i {
+            @include setBackgroundColor($dark-color);
+            width: pxToRem(135px);
+            height: pxToRem(135px);
+            @extend %center;
+            position: relative;
+            cursor: pointer;
+            @include transition(all 0.5s ease-in);
+
+            margin: auto {
+                bottom: 2rem;
+            }
+
+            // .process .process-item::after
+            &::after {
+                position: absolute;
+                width: pxToRem(45px);
+                height: pxToRem(45px);
+                @extend %center;
+                border-radius: 50%;
+                @include setBackgroundColor($yellow-color);
+                top: 0;
+                right: 0;
+                z-index: 1;
+                font-size: 1.5rem;
+                @include transition(all 0.5s ease-in);
+            }
+
+            // .process .process-item:hover
+            &:hover {
+                width: pxToRem(145px);
+                height: pxToRem(145px);
+                @include setBackgroundColor($yellow-color);
+
+                // .process .process-item:hover::after
+                &::after {
+                    @include setBackgroundColor($dark-color)
+                }
+            }
+        }
+
+        @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+                i {
+                    &::after {
+                        content: "#{$i}";
+                    }
+                }
+            }
+        }
+    }
+}
+
+// End  Process 
