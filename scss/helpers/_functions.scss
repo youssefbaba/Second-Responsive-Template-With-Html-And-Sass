@@ -1,11 +1,12 @@
 // Fonction For Stripe Unit 
 @function stripUnit($value) {
-    @return math.div($value, ($value * 0 + 1));
+    // @return math.div($value, (($value * 0) + 1));
+    @return $value / ($value * 0 + 1);
 }
 
 // Fonction For Convert px To rem 
 @function pxToRem($pxValue) {
-    @return #{math.div(stripUnit($pxValue) , stripUnit($html-font-size))}rem;
+    @return #{stripUnit($pxValue) /  stripUnit($html-font-size)}rem;
 }
 
 //  Function  For Set Color  Of Text 
