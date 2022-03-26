@@ -3,7 +3,7 @@
 /* Import Variables */
 /* Import Colors */
 /* Import Placeholders */
-footer .social-links a, .process .process-item i, .process .process-item i::after {
+footer .social-links a {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -279,28 +279,20 @@ footer {
       footer .social-links a:hover {
         background-color: #ffbc00; }
 
-/* Import Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  background-color: #f4f4f4;
-  color: #333;
-  border: none;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in; }
-  .btn.btn-dark {
-    background-color: #333;
-    color: #fff; }
-  .btn.btn-yellow {
-    background-color: #ffbc00;
-    color: #333; }
-  .btn.btn-light {
-    background-color: #f4f4f4;
-    color: #333; }
+/* Import Header Landing Inner */
+.header-landing-inner {
+  background-image: url("../images/landing.jpg");
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  background-size: cover;
+  height: 10rem;
+  border-bottom: 3px solid #ffbc00; }
+  @media (min-width: 577px) {
+    .header-landing-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 5.5rem; } }
 
 /* Import Heading Section  */
 .heading-section {
@@ -322,150 +314,101 @@ footer {
   .heading-section .lead {
     margin-top: 1rem; }
 
-/* Import Home Page */
-.header-landing {
-  position: relative;
-  background-image: url("../../images/landing.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  height: 10rem;
-  border-bottom: 3px solid #ffbc00; }
+/* Import About Page */
+.about .about-info {
+  display: grid;
+  grid-template-areas: "image" "bio" "award-1" "award-2 " "award-3";
+  gap: 1rem; }
+  @media (min-width: 768px) {
+    .about .about-info {
+      grid-template-areas: "image bio bio" "award-1 award-2 award-3"; } }
+  .about .about-info .image {
+    grid-area: image; }
+    .about .about-info .image img {
+      display: block;
+      width: 100%;
+      height: 100%; }
+  .about .about-info .bio {
+    grid-area: bio;
+    border-left: 3px solid #ffbc00;
+    padding: 0.8rem; }
+  .about .about-info .award-1 {
+    grid-area: award-1;
+    padding: 1rem 0; }
+    .about .about-info .award-1 i {
+      color: #ffbc00;
+      margin-bottom: 1rem; }
+  .about .about-info .award-2 {
+    grid-area: award-2;
+    padding: 1rem 0; }
+    .about .about-info .award-2 i {
+      color: #ffbc00;
+      margin-bottom: 1rem; }
+  .about .about-info .award-3 {
+    grid-area: award-3;
+    padding: 1rem 0; }
+    .about .about-info .award-3 i {
+      color: #ffbc00;
+      margin-bottom: 1rem; }
+
+.skills .heading-section {
+  margin-bottom: 1rem; }
+
+.skills .skills-items li {
+  margin-bottom: 0.6rem; }
+  .skills .skills-items li div {
+    height: 1.25rem;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative; }
+    .skills .skills-items li div span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffbc00; }
+
+.partners {
+  display: none; }
   @media (min-width: 577px) {
-    .header-landing {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      height: 50vh; } }
-  @media (min-width: 768px) {
-    .header-landing {
-      height: 100vh; } }
-  .header-landing .landing {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -32%);
-    color: white;
-    text-align: center;
-    display: none; }
-    @media (min-width: 577px) {
-      .header-landing .landing {
-        display: block; } }
-    @media (min-width: 768px) {
-      .header-landing .landing {
-        transform: translate(-50%, -50%); } }
-    .header-landing .landing-content h1 {
-      font-size: 4rem;
-      line-height: 1.2; }
-    .header-landing .landing-content .btn:hover {
-      background-color: #ffbc00;
-      color: #333; }
+    .partners {
+      display: block; } }
+  .partners .partners-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center; }
+  .partners .partners-item {
+    width: 70%; }
+    .partners .partners-item img {
+      display: block; }
 
-.services .services-items {
+.testimonials .testimonials-items {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem; }
+  gap: 1rem; }
   @media (min-width: 768px) {
-    .services .services-items {
+    .testimonials .testimonials-items {
       grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 992px) {
-    .services .services-items {
+    .testimonials .testimonials-items {
       grid-template-columns: repeat(4, 1fr); } }
 
-.services .services-item i {
-  color: #ffbc00;
-  margin-bottom: 0.4rem; }
+.testimonials .testimonials-item .text {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem; }
 
-.statistics {
-  display: grid;
-  grid-template-columns: 1fr; }
-  @media (min-width: 768px) {
-    .statistics {
-      grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 992px) {
-    .statistics {
-      grid-template-columns: repeat(4, 1fr); } }
-  .statistics .statistics-item {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    line-height: 2; }
-    .statistics .statistics-item:nth-child(odd) {
-      background-color: #f4f4f4; }
-    .statistics .statistics-item:nth-child(even) {
-      background-color: #ccc; }
-    @media (min-width: 768px) {
-      .statistics .statistics-item:nth-child(1), .statistics .statistics-item:nth-child(4) {
-        background-color: #f4f4f4; }
-      .statistics .statistics-item:nth-child(2), .statistics .statistics-item:nth-child(3) {
-        background-color: #ccc; } }
-    @media (min-width: 992px) {
-      .statistics .statistics-item:nth-child(odd) {
-        background-color: #f4f4f4; }
-      .statistics .statistics-item:nth-child(even) {
-        background-color: #ccc; } }
-    .statistics .statistics-item p {
-      font-size: 1.5rem; }
-    .statistics .statistics-item h4 {
-      font-size: 2rem;
-      font-weight: 600; }
+.testimonials .testimonials-item .image {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; }
+  .testimonials .testimonials-item .image img {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%; }
 
-.process .process-items {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem; }
-  @media (min-width: 768px) {
-    .process .process-items {
-      grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 992px) {
-    .process .process-items {
-      grid-template-columns: repeat(4, 1fr); } }
-
-.process .process-item i {
-  background-color: #333;
-  color: #fff;
-  width: 8.4375rem;
-  height: 8.4375rem;
-  position: relative;
-  cursor: pointer;
-  -webkit-transition: all 0.5s ease-in;
-  -moz-transition: all 0.5s ease-in;
-  -ms-transition: all 0.5s ease-in;
-  -o-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
-  margin: auto;
-    margin-bottom: 2rem; }
-  .process .process-item i::after {
-    position: absolute;
-    width: 2.8125rem;
-    height: 2.8125rem;
-    border-radius: 50%;
-    background-color: #ffbc00;
-    color: #333;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    font-size: 1.5rem;
-    -webkit-transition: all 0.5s ease-in;
-    -moz-transition: all 0.5s ease-in;
-    -ms-transition: all 0.5s ease-in;
-    -o-transition: all 0.5s ease-in;
-    transition: all 0.5s ease-in; }
-  .process .process-item i:hover {
-    width: 9.0625rem;
-    height: 9.0625rem;
-    background-color: #ffbc00;
-    color: #333; }
-    .process .process-item i:hover::after {
-      background-color: #333;
-      color: #fff; }
-
-.process .process-item:nth-child(1) i::after {
-  content: "1"; }
-
-.process .process-item:nth-child(2) i::after {
-  content: "2"; }
-
-.process .process-item:nth-child(3) i::after {
-  content: "3"; }
-
-.process .process-item:nth-child(4) i::after {
-  content: "4"; }
+/*# sourceMappingURL=about.css.map */
